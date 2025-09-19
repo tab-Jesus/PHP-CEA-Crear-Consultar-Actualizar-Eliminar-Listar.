@@ -1,5 +1,5 @@
 
-
+  <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['alter'])) {
     $id = $_POST['id'];
@@ -22,3 +22,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['alter'])) {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 }
+?>

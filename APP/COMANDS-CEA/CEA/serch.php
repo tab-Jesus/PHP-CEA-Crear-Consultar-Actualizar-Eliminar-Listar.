@@ -1,6 +1,6 @@
 
 
-
+  <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['serch'])) {
     $sql = "SELECT * FROM gastos ORDER BY fecha DESC";
@@ -21,3 +21,5 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['serch'])) {
 }
     
     $conn->close();
+
+    ?>

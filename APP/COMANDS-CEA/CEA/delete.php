@@ -1,4 +1,4 @@
-
+  <?php
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
@@ -13,6 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
     }
 }
 
-// Cerrar conexión
+
 $conn->close();
 ?>

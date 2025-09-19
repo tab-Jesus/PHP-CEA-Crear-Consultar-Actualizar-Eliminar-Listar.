@@ -1,5 +1,5 @@
 
-
+  <?php
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['create'])) {
@@ -20,3 +20,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['create'])) {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 }
+?>
