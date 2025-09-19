@@ -1,7 +1,7 @@
   <?php
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['CEA-Delete'])) {
     $id = $_POST['id'];
     
     $sql = "DELETE FROM gastos WHERE id=$id";

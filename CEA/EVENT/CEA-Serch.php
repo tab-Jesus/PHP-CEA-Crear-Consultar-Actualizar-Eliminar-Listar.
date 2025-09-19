@@ -2,7 +2,7 @@
 
   <?php
 
-if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['serch'])) {
+if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['CEA-Search'])) {
     $sql = "SELECT * FROM gastos ORDER BY fecha DESC";
     $result = $conn->query($sql);
 

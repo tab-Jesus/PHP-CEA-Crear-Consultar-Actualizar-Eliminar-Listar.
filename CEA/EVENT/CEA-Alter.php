@@ -1,8 +1,8 @@
 
   <?php
 
-
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['create'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['CEA-Alter'])) {
+    $id = $_POST['id'];
     $fecha = $_POST['fecha'];
     $valorTotalSinIVA = $_POST['valorTotalSinIVA'];
     $ivaTotal = $_POST['ivaTotal'];
@@ -11,11 +11,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['create'])) {
     $lugar = $_POST['lugar'];
     $descripcion = $_POST['descripcion'];
     
-    $sql = "INSERT INTO gastos (fecha, valorTotalSinIVA, ivaTotal, valorTotalConIVA, nombreUsuario, lugar, descripcion)
-            VALUES ('$fecha', $valorTotalSinIVA, $ivaTotal, $valorTotalConIVA, '$nombreUsuario', '$lugar', '$descripcion')";
+    $sql = "UPDATE gastos SET fecha='$fecha', valorTotalSinIVA=$valorTotalSinIVA, 
+            ivaTotal=$ivaTotal, valorTotalConIVA=$valorTotalConIVA, 
+            nombreUsuario='$nombreUsuario', lugar='$lugar', descripcion='$descripcion' 
+            WHERE id=$id";
     
     if ($conn->query($sql) === TRUE) {
-        echo "Gasto creado exitosamente";
+        echo "Gasto actualizado exitosamente";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
