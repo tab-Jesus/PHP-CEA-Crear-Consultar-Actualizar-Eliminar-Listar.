@@ -7,7 +7,7 @@ use RuntimeException;
 class InvalidGastoStateException extends RuntimeException
 {
 }
-<?php
+
 
 namespace App\Application\Service;
 

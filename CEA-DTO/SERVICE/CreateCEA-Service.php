@@ -7,29 +7,9 @@ use App\Application\Port\Out\GastoRepositoryPort;
 use App\Domain\Entity\Gasto;
 use App\Infrastructure\Mapper\GastoMapper;
 
-
-class CreateGastoService implements CreateGastoUseCase
+class CreateCEAService
 {
-    private GastoRepositoryPort $gastoRepository;
 
-    public function __construct(GastoRepositoryPort $gastoRepository)
-    {
-        $this->gastoRepository = $gastoRepository;
-    }
-
-  
-    public function createGasto(array $gastoData): Gasto
-    {
-        $this->validateGastoData($gastoData);
-
-        $gasto = GastoMapper::fromArray($gastoData);
-
-        $this->gastoRepository->save($gasto);
-
-        return $gasto;
-    }
-
-   
     private function validateGastoData(array $data): void
     {
         $requiredFields = ['fecha', 'valorTotalSinIVA', 'ivaTotal', 'valorTotalConIVA', 'nombreUsuario', 'lugar'];
@@ -64,4 +44,5 @@ class CreateGastoService implements CreateGastoUseCase
         }
     }
 }
+
 ?>

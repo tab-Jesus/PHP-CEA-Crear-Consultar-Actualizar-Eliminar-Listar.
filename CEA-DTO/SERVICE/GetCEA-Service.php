@@ -7,7 +7,7 @@ use Exception;
 class GastoNotFoundException extends Exception
 {
 }
-<?php
+
 
 namespace App\Application\Service;
 
